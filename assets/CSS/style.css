@@ -105,3 +105,34 @@ input[type="checkbox"]{
     font-family: "Outfit", "sans-serif";
     font-weight: 800;
 }
+
+#timer {
+    display: inline-block;
+    margin-left: 55rem;
+}
+
+h2 {
+    font-family: "Outfit", "sans-serif";
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+}
+
+.answerBtn {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.answer {
+    display: inline-block;
+    width: 300px;
+    height: 75px;
+    text-align: center;
+    border-radius: 50px;
+    border: none;
+    margin-left: 35px;
+    margin-top: 10px;
+}
