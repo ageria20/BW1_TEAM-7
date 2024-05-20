@@ -105,24 +105,27 @@ let totalAnswer = 0;
 let userPoints = 0; // Punteggio del giocatore
 
 const startCountdown = () => {
-  countdown = 60;
+  countdown = 61;
   interval = setInterval(() => {
     countdown--;
     updateDisplay(countdown);
     updateCircleProgress();
     if (countdown === 0) {
       clearInterval(interval);
-      timerFinished();
-      endTest();
+      // timerFinished();
     }
   }, 1000);
 };
 
 const updateDisplay = (countdown) => {
-  const minutes = Math.floor(countdown / 60);
-  const remainingSeconds = countdown % 60;
-  const timer = document.getElementById("timer");
-  timer.innerHTML = "seconds" + remainingSeconds + "remaining";
+  const minutes = Math.floor(countdown / 61);
+  const remainingSeconds = countdown % 61;
+  const timer = document.getElementById("textTimer");
+  timer.innerText = `
+  seconds 
+  ${remainingSeconds} 
+   remaining`;
+  timer.style.color = "white";
 };
 
 const timerFinished = () => {
@@ -130,8 +133,8 @@ const timerFinished = () => {
 };
 
 function updateCircleProgress() {
-  const progress = (countdown / 60) * 346;
-  const circleProgress = document.querySelector(".circle-progress"); // Ensure circleProgress is defined
+  const progress = (countdown / 61) * 346;
+  const circleProgress = document.querySelector("#circle-progress"); // Ensure circleProgress is defined
   circleProgress.style.strokeDashoffset = 346 - progress;
 }
 
