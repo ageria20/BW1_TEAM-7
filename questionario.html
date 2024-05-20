@@ -14,14 +14,39 @@
         alt="epicode_logo"
         id="epicodeLogo"
       />
-      <article id="timer">60</article>
     </header>
     <main>
+      <article id="timer">
+        <svg>
+          <circle
+            cx="90"
+            cy="90"
+            r="55"
+            stroke="lightgrey"
+            stroke-width="10"
+            fill="transparent"
+          ></circle>
+
+          <circle
+            id="circle-progress"
+            cx="90"
+            cy="90"
+            r="55"
+            stroke="#00FFFF"
+            stroke-width="10"
+            fill="none"
+            stroke-dasharray="346"
+            stroke-dashoffset="0"
+          >
+            <span id="textTimer">00</span>
+          </circle>
+        </svg>
+      </article>
       <section id="quizzContainer">
         <article id="questionsCont">
           <h2 id="question">Domanda 1</h2>
         </article>
-        <article class="answerBtn">
+        <article class="answersContainer">
           <button class="answer" data-answer="0"></button>
           <button class="answer" data-answer="1"></button>
           <button class="answer" data-answer="2"></button>
@@ -29,5 +54,6 @@
         </article>
       </section>
     </main>
+    <script src="./assets/questionario.js"></script>
   </body>
 </html>
