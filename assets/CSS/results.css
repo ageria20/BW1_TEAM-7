@@ -21,9 +21,8 @@ header {
     width: 13rem;
     height: 3rem;
     padding: 2rem 0;
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 2rem;
+    
 }
 
 #titleContainer {
@@ -138,7 +137,8 @@ form {
 #timer {
     position: relative;
     display: inline-block;
-    margin-left: 80rem;
+    margin-left: 50rem;
+    margin-bottom: 0;
     max-width: 180px;
     height: 178px;
     text-align: center;
@@ -150,7 +150,7 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #3498db;
-    font-size: 10px;
+    font-size: 13px;
     font-family: "Outfit", "sans-serif";
     line-height: 1;
     font-weight: 200;
@@ -189,4 +189,73 @@ h2 {
     opacity: 0.1;
     box-shadow: 0px -3px 7px 4px #D20094;
     border: none;
+}
+
+#myChart {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+}
+
+/* .mychartCont {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+} */
+
+#resultContainer {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-family: "Inter", "sans-serif";
+    line-height: 1;
+    margin-bottom: 4rem;
+}
+
+#resultContainer h1 {
+    margin-bottom: 0;
+}
+
+#resultContainer p{
+    font-size: 24px;
+    display: inline-block;
+}
+
+#correctAnsers{
+transform: translate(73px, 184px);
+text-align: left;
+width: 25%;
+color: white;
+
+}
+
+#correctAnsers p {
+    color: white;
+    font-family: "Outfit", "sans-serif";
+    transform: translate(170px, 59px);
+}
+
+#correctAnsers h2 {
+    color: white;
+    font-family: "Outfit", "sans-serif";
+    margin: 0;
+}
+
+#wrongAnswer{
+    transform: translate(1300px, -464px);
+    text-align: right;
+    width: 25%;
+    color: white;
+    }
+
+#wrongAnswer h2 {
+    color: white;
+    font-family: "Outfit", "sans-serif";
+    
+}
+
+#wrongAnswer p {
+    color: white;
+    font-family: "Outfit", "sans-serif";
+    transform: translate(-168px, -11px);
 }

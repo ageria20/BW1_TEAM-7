@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/CSS/results.css" />
+    <title>Results Page</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="./assets/img/epicode_logo.png"
+        alt="epicodeLogo"
+        id="epicodeLogo"
+      />
+    </header>
+    <main>
+      <section id="resultContainer">
+        <h1>Results</h1>
+        <p>The Summary of your Answers:</p>
+      </section>
+      <div class="mychartCont">
+        <div id="correctAnsers">
+          <h2>Correct</h2>
+          <p>numero domande</p>
+        </div>
+        <canvas id="myChart"><span>Congratulations!</span></canvas>
+        <div id="wrongAnswer">
+          <h2>Wrong</h2>
+          <p>numero domande</p>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      const chartData = {
+        labels: ["Wrong Answer", "Correct Answer"],
+        data: [],
+        backgroundColor: ["#D20094", "#00FFFF"],
+      };
+
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: chartData.labels,
+          weight: 1,
+          datasets: [
+            {
+              label: "Results Answer",
+              data: [30, 70],
+              backgroundColor: chartData.backgroundColor,
+              hoverOffset: 2,
+              cutout: "70%",
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              enabled: false,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
