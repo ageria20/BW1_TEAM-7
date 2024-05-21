@@ -16,7 +16,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -93,125 +93,144 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+document.addEventListener("DOMContentLoaded", function () {
+  const timerElement = document.getElementById("timer");
+  const questionNumberElement = document.getElementById("questionNumber"); // Seleziona il nuovo elemento
+  const questionElement = document.getElementById("question");
+  const answerList = document.getElementById("answerList");
+  let countdown = 60; // Imposta il timer a 60 secondi
+  let interval; // Variabile per il timer
+  let currentQuestionIndex = 0; // Indice della domanda corrente
+  let score = 0; // Punteggio del giocatore
+  let userAnswers = []; // Storico delle risposte dell'utente
 
-const timerElement = document.getElementById("timer");
-const questionElement = document.getElementById("question");
-const answerButtons = document.querySelectorAll(".answer");
-const answersContainer = document.querySelector(".answersContainer");
-let countdown = 60; // Imposta il timer a 60 secondi
-let interval; // Variabile per il timer
-let currentQuestionIndex = 0; // Indice della domanda corrente
-let score = 0; // Punteggio del giocatore
-let userAnswers = []; // Storico delle risposte dell'utente
+  // Funzione per avviare il conto alla rovescia
+  const startCountdown = () => {
+    countdown = 61; // Imposta il countdown a 60 secondi
+    interval = setInterval(() => {
+      countdown--;
+      updateDisplay(countdown); // Aggiorna il display del timer
+      updateCircleProgress(); // Aggiorna il cerchio di progresso
+      if (countdown < 0) {
+        clearInterval(interval); // Ferma il timer quando il countdown arriva a 0
+        timerFinished(); // Chiama la funzione quando il timer finisce
+      }
+    }, 1000);
+  };
 
-const startCountdown = () => {
-  countdown = 61;
-  interval = setInterval(() => {
-    countdown--;
-    updateDisplay(countdown);
-    updateCircleProgress();
-    if (countdown === 0) {
-      clearInterval(interval);
-      // timerFinished();
-    }
-  }, 1000);
-};
+  // Funzione per aggiornare il display del timer
+  const updateDisplay = (countdown) => {
+    const remainingSeconds = countdown % 61;
+    const timer = document.getElementById("textTimer");
+    timer.innerHTML = `
+    seconds 
+    <span class="remainingSeconds">${remainingSeconds} </span>
+    remaining`;
+    timer.style.color = "white";
+  };
 
-const updateDisplay = (countdown) => {
-  const minutes = Math.floor(countdown / 61);
-  const remainingSeconds = countdown % 61;
-  const timer = document.getElementById("textTimer");
-  timer.innerText = `
-  seconds 
-  ${remainingSeconds} 
-   remaining`;
-  timer.style.color = "white";
-};
+  // Funzione chiamata quando il timer finisce
+  const timerFinished = () => {
+    alert("Il tempo per questa domanda è scaduto!");
+    loadNextQuestion(); // Carica la prossima domanda
+  };
 
-const timerFinished = () => {
-  alert("Il tempo per questa domanda è scaduto!");
-  loadNextQuestion();
-};
-
-function updateCircleProgress() {
-  const progress = (countdown / 61) * 346;
-  const circleProgress = document.querySelector("#circle-progress"); // Ensure circleProgress is defined
-  circleProgress.style.strokeDashoffset = 346 - progress;
-}
-
-//const endTest = () => {
-//alert("Test completato!");
-// qui dovrei mettere il punteggio finale del giocatore
-// e dovrei fare vedere tutto lo storico delle risposte del giocatore
-//};
-
-//startCountdown();
-
-// Funzione per caricare la prossima domanda
-function loadNextQuestion() {
-  currentQuestionIndex++; // Incrementa l'indice della domanda corrente
-  if (currentQuestionIndex < questions.length) {
-    loadQuestion();
-  } else {
-    endTest();
+  // Funzione per aggiornare il cerchio di progresso
+  function updateCircleProgress() {
+    const progress = (countdown / 61) * 346;
+    const circleProgress = document.querySelector("#circle-progress");
+    circleProgress.style.strokeDashoffset = 346 - progress;
   }
-}
-// Funzione per caricare una domanda
-function loadQuestion() {
-  const question = questions[currentQuestionIndex];
-  questionElement.textContent = question.question;
 
-  // Mescola le risposte
-  const answers = [question.correct_answer, ...question.incorrect_answers];
-  shuffleArray(answers);
-
-  // Aggiorna i pulsanti delle risposte
-  answerButtons.forEach((button, index) => {
-    if (answers[index]) {
-      button.textContent = answers[index];
-      button.style.display = "block";
-      button.onclick = () => selectAnswer(answers[index]);
+  // Funzione per caricare la prossima domanda
+  function loadNextQuestion() {
+    currentQuestionIndex++; // Incrementa l'indice della domanda corrente
+    if (currentQuestionIndex < questions.length) {
+      loadQuestion(); // Carica la prossima domanda se ce ne sono ancora
     } else {
-      button.style.display = "none";
+      endTest(); // Termina il quiz se non ci sono più domande
     }
-  });
-
-  startCountdown();
-}
-// Funzione per mescolare un array
-function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
-
-// Funzione per gestire la selezione della risposta
-function selectAnswer(selectedAnswer) {
-  const question = questions[currentQuestionIndex];
-  const correctAnswer = question.correct_answer;
-
-  // Aggiungi la risposta dell'utente all'array userAnswers
-  userAnswers.push({
-    question: question.question,
-    selectedAnswer,
-    correctAnswer,
-    isCorrect: selectedAnswer === correctAnswer,
-  });
-
-  // Incrementa il punteggio se la risposta è corretta
-  if (selectedAnswer === correctAnswer) {
-    score++;
   }
 
-  // Carica la prossima domanda
-  clearInterval(interval); // Ferma il timer corrente
-  loadNextQuestion();
-}
+  // Funzione per caricare una domanda
+  function loadQuestion() {
+    const question = questions[currentQuestionIndex];
+    questionElement.textContent = question.question; // Visualizza la domanda corrente
+    questionNumberElement.textContent = `QUESTION ${currentQuestionIndex + 1}/${
+      questions.length
+    }`; // Aggiorna il numero della domanda
 
-// Funzione per terminare il quiz e mostrare il punteggio finale
-function endTest() {
-  alert(`Test completato! Il tuo punteggio è: ${score}`);
-  console.log("User Answers:", userAnswers);
-  // Visualizza il punteggio e le risposte
-}
+    // Mescola le risposte
+    const answers = [question.correct_answer, ...question.incorrect_answers];
+    shuffleArray(answers); // Mescola l'array delle risposte
 
-// Inizia il quiz caricando la prima domanda
-loadQuestion();
+    answerList.innerHTML = ""; // Pulisce le risposte precedenti
+
+    // Crea un elemento <li> per ogni risposta e lo aggiunge alla lista
+    answers.forEach((answer, index) => {
+      const li = document.createElement("li");
+      li.className = "answer";
+      li.dataset.answer = answer;
+      li.textContent = answer;
+      li.onclick = () => selectAnswer(answer); // Assegna l'evento click alla risposta
+      answerList.appendChild(li);
+    });
+    clearInterval(interval);
+    startCountdown(); // Avvia il timer per la nuova domanda
+  }
+
+  // Funzione per mescolare un array
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  // Funzione per gestire la selezione della risposta
+  function selectAnswer(selectedAnswer) {
+    const question = questions[currentQuestionIndex];
+    const correctAnswer = question.correct_answer;
+
+    // Aggiunge la risposta dell'utente all'array userAnswers
+    userAnswers.push({
+      question: question.question,
+      selectedAnswer,
+      correctAnswer,
+      isCorrect: selectedAnswer === correctAnswer,
+    });
+
+    // Incrementa il punteggio se la risposta è corretta
+    if (selectedAnswer === correctAnswer) {
+      score++;
+    }
+
+    // Rimuove la classe 'selected' da tutti i bottoni
+    const answerButtons = document.querySelectorAll(".answer");
+    answerButtons.forEach((button) => {
+      button.classList.remove("selected");
+    });
+
+    // Aggiunge la classe 'selected' al bottone cliccato
+    const selectedButton = answerList.querySelector(
+      `li[data-answer="${selectedAnswer}"]`
+    );
+    selectedButton.classList.add("selected");
+
+    clearInterval(interval); // Ferma il timer corrente
+
+    // Carica la prossima domanda dopo un breve ritardo per mostrare la selezione
+    setTimeout(() => {
+      loadNextQuestion(); // Carica la prossima domanda
+    }, 1300);
+  }
+
+  // Funzione per terminare il quiz e mostrare il punteggio finale
+  function endTest() {
+    alert(`Test completato! Il tuo punteggio è: ${score}`);
+    console.log("User Answers:", userAnswers); // Visualizza le risposte dell'utente nel console log
+  }
+
+  // Inizia il quiz caricando la prima domanda
+  loadQuestion();
+});

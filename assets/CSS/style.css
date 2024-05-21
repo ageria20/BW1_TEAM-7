@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
+
+
+
 body {
+    overflow-x: hidden;
     background-image: url("../img/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -138,9 +142,10 @@ form {
 #timer {
     position: relative;
     display: inline-block;
-    margin-left: 80rem;
+    margin-left: 86rem;
+    margin-bottom: 0;
     max-width: 180px;
-    height: 160px;
+    height: 178px;
     text-align: center;
     font-size: 10px;
 }
@@ -150,10 +155,19 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #3498db;
-    font-size: 14px;
+    font-size: 13px;
     font-family: "Outfit", "sans-serif";
-    line-height: 1.5;
+    line-height: 1;
+    font-weight: 200;
+
 }
+
+.remainingSeconds {
+    font-size: 50px;
+    display: block;
+    font-weight: 300;
+}
+
 
 
 h2 {
@@ -179,11 +193,49 @@ h2 {
     border-radius: 50px;
     margin-left: 35px;
     margin-top: 20px;
-    opacity: 0.1;
-    box-shadow: 0px -3px 7px 4px #D20094;
+    font-family: "Inter","sans-serif";
+    box-shadow: 0px -3px 7px 4px #c0c0c0;
     border: none;
+    color: white;
+    line-height: 65PX;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.answerContainer{
-    margin: auto;
+.answer:hover {
+    background-color: #D20094; /* Cambia il colore al passaggio del mouse */
+}
+.answer.selected {
+    background-color: #D20094; 
+}
+.answersContainer {
+
+    text-align: center;
     display: inline-block;
+    width: 700px;
+        /* transform: translate(289px, 10px); */
+        margin: auto;
+    }
+    
+#quizzContainer {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        transform: translate(10px, -144px); 
 }
+
+#questionNumberContainer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    
+  }
+  
+  #questionNumber {
+    font-family: "Outfit", "sans-serif";
+    font-size: 20px;
+    color: white; }
+
+    
