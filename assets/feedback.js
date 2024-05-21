@@ -1,9 +1,9 @@
 const stars = document.querySelectorAll(".star");
-console.log(stars);
+// console.log(stars);
 
 stars.forEach((star, index) => {
   star.addEventListener("click", () => {
-    console.log(index);
+    // console.log(index);
     stars.forEach((star, index2) => {
       index >= index2 ? star.classList.add("filled") : star.classList.remove("filled");
     });
@@ -23,7 +23,7 @@ stars.forEach((star, index) => {
 });
 
 const feedback = document.querySelector("button");
-console.log(feedback);
+// console.log(feedback);
 feedback.addEventListener("click", () => {
   alert("Grazie per aver completato il test!");
 });
