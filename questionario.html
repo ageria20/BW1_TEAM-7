@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/CSS/reset.css" />
+    <link rel="stylesheet" href="./assets/CSS/questionario.css" />
+    <title>Questionario</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="./assets/img/epicode_logo.png"
+        alt="epicode_logo"
+        id="epicodeLogo"
+      />
+    </header>
+    <main>
+      <article id="timer">
+        <svg>
+          <circle
+            cx="90"
+            cy="90"
+            r="55"
+            stroke="lightgrey"
+            stroke-width="10"
+            fill="transparent"
+          ></circle>
+
+          <circle
+            id="circle-progress"
+            cx="90"
+            cy="90"
+            r="55"
+            stroke="#00FFFF"
+            stroke-width="10"
+            fill="none"
+            stroke-dasharray="346"
+            stroke-dashoffset="0"
+          >
+            <span id="textTimer"></span>
+          </circle>
+        </svg>
+      </article>
+      <section id="quizzContainer">
+        <article id="questionsCont">
+          
+          <h2 id="question"></h2>
+        </article>
+        <article class="answersContainer">
+          <ul id="answerList"></ul>
+        </article>
+      </section>
+      <div id="questionNumberContainer">
+        <h3 id="questionNumber"></h3> 
+      </div>
+    </main>
+    <script src="./assets/questionario.js"></script>
+  </body>
+</html>
