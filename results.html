@@ -30,6 +30,9 @@
           <p>numero domande</p>
         </div>
       </div>
+      <div id="btnContainer">
+        <button id="rateUs">RATE US</button>
+      </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -47,13 +50,12 @@
         type: "doughnut",
         data: {
           labels: chartData.labels,
-          weight: 1,
+          weight: 0,
           datasets: [
             {
               label: "Results Answer",
               data: [30, 70],
               backgroundColor: chartData.backgroundColor,
-              hoverOffset: 2,
               cutout: "70%",
             },
           ],

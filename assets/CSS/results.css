@@ -9,6 +9,9 @@ body {
     width: 100%;
     height: 100vh;
 }
+main{
+    max-width: 900px;
+}
 
 header { 
     max-width: 900px;
@@ -31,6 +34,7 @@ header {
 
 
 h1 {
+    width: 100vw;
     font-family: "Outfit", "sans-serif";
     font-size: 60px;
     color: white;
@@ -52,116 +56,6 @@ span {
     max-width: 550px;
 }
 
-h2 {
-    font-family: "Inter", "sans-serif";
-    font-size: 30px;
-    color: #D20094;
-    font-weight: 700;
-    margin-top: 2rem;
-}
-
-#introduction > p {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-    padding: 1rem 0;
-    
-}
-
-#descriptionList {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-    margin-top: 2rem;
-    padding-left: 1.5rem;
-    line-height: 1.8;
-} 
-
-form {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-    margin-top: 5rem;
-}
-
-
-/* input[type="checkbox"]{
-    width: 1em;
-    height: 1rem;
-    border: 2px solid transparent; 
-    font-size: 16px;  
-    accent-color: green;
-  } */
-
-  input[type="checkbox"] {
-    appearance: none;
-    width: 1.2em;
-    height: 1.2em;
-    border: 2px solid white;
-    background-color: transparent;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  input[type="checkbox"]:checked::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0.6em;
-    height: 0.6em;
-    background-color: green;
-    transform: translate(-50%, -50%);
-
-  }
-
-  label{
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-  }
-
-
-  
-.proceedBtn {
-    width: 13rem;
-    padding: 1rem;
-    border: none;
-    box-shadow: 0px 0px 38px 3px #00FFFF;
-    background-color: #00FFFF;
-    font-size: 20px;
-    margin-left: 11rem;
-    font-family: "Outfit", "sans-serif";
-    font-weight: 800;
-}
-
-#timer {
-    position: relative;
-    display: inline-block;
-    margin-left: 50rem;
-    margin-bottom: 0;
-    max-width: 180px;
-    height: 178px;
-    text-align: center;
-    font-size: 10px;
-}
-#textTimer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #3498db;
-    font-size: 13px;
-    font-family: "Outfit", "sans-serif";
-    line-height: 1;
-    font-weight: 200;
-    
-}
-
-.remainingSeconds {
-    font-size: 50px;
-    display: block;
-    font-weight: 300;
-}
 
 h2 {
     font-family: "Outfit", "sans-serif";
@@ -172,29 +66,18 @@ h2 {
     margin-bottom: 5rem;
 }
 
-.answerBtn {
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.answer {
-    display: inline-block;
-    width: 300px;
-    height: 75px;
-    text-align: center;
-    border-radius: 50px;
-    margin-left: 35px;
-    margin-top: 20px;
-    opacity: 0.1;
-    box-shadow: 0px -3px 7px 4px #D20094;
-    border: none;
+.mychartCont {
+    width: 100vw;
+    height: 400px;
+    margin: auto;
 }
 
 #myChart {
     width: 350px;
     height: 350px;
     margin: auto;
+    box-shadow: 0px 0px 38px -10px black;
+    border-radius: 50%;
 }
 
 /* .mychartCont {
@@ -205,7 +88,7 @@ h2 {
 
 #resultContainer {
     text-align: center;
-    width: 100%;
+    width: 100vw;
     color: white;
     font-family: "Inter", "sans-serif";
     line-height: 1;
@@ -231,12 +114,14 @@ color: white;
 
 #correctAnsers p {
     color: white;
+    text-align: left;
     font-family: "Outfit", "sans-serif";
-    transform: translate(170px, 59px);
+    /* transform: translate(170px, 59px); */
 }
 
 #correctAnsers h2 {
     color: white;
+    text-align: left;
     font-family: "Outfit", "sans-serif";
     margin: 0;
 }
@@ -251,11 +136,34 @@ color: white;
 #wrongAnswer h2 {
     color: white;
     font-family: "Outfit", "sans-serif";
+    text-align: right;
     
 }
 
 #wrongAnswer p {
     color: white;
     font-family: "Outfit", "sans-serif";
-    transform: translate(-168px, -11px);
+    text-align: right;
+}
+
+#btnContainer {
+    width: 100vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#rateUs {
+    font-size: 24px;
+    font-family: "Outfit", "sans-serif";
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    width: 15rem;
+    height: 4rem;
+    padding: 1rem;
+    margin-top: 5rem;
+    box-shadow: 0px 0px 38px -20px #00FFFF;
 }
