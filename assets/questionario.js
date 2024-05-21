@@ -94,15 +94,15 @@ const questions = [
   },
 ];
 
-const timer = document.getElementById("timer");
-const answersBtn = document.querySelectorAll(".answer");
-const answersContainer = document.querySelectorAll(".answersContainer");
-let countdown = 60; // Setto il timer a 60 secondi
-let interval; // Variabile per il time
-let questionNumber = 0;
-let totalAnswer = 0;
-
-let userPoints = 0; // Punteggio del giocatore
+const timerElement = document.getElementById("timer");
+const questionElement = document.getElementById("question");
+const answerButtons = document.querySelectorAll(".answer");
+const answersContainer = document.querySelector(".answersContainer");
+let countdown = 60; // Imposta il timer a 60 secondi
+let interval; // Variabile per il timer
+let currentQuestionIndex = 0; // Indice della domanda corrente
+let score = 0; // Punteggio del giocatore
+let userAnswers = []; // Storico delle risposte dell'utente
 
 const startCountdown = () => {
   countdown = 61;
@@ -130,6 +130,7 @@ const updateDisplay = (countdown) => {
 
 const timerFinished = () => {
   alert("Il tempo per questa domanda è scaduto!");
+  loadNextQuestion();
 };
 
 function updateCircleProgress() {
@@ -138,10 +139,79 @@ function updateCircleProgress() {
   circleProgress.style.strokeDashoffset = 346 - progress;
 }
 
-const endTest = () => {
-  alert("Test completato!");
-  // qui dovrei mettere il punteggio finale del giocatore
-  // e dovrei fare vedere tutto lo storico delle risposte del giocatore
-};
+//const endTest = () => {
+//alert("Test completato!");
+// qui dovrei mettere il punteggio finale del giocatore
+// e dovrei fare vedere tutto lo storico delle risposte del giocatore
+//};
 
-startCountdown();
+//startCountdown();
+
+// Funzione per caricare la prossima domanda
+function loadNextQuestion() {
+  currentQuestionIndex++; // Incrementa l'indice della domanda corrente
+  if (currentQuestionIndex < questions.length) {
+    loadQuestion();
+  } else {
+    endTest();
+  }
+}
+// Funzione per caricare una domanda
+function loadQuestion() {
+  const question = questions[currentQuestionIndex];
+  questionElement.textContent = question.question;
+
+  // Mescola le risposte
+  const answers = [question.correct_answer, ...question.incorrect_answers];
+  shuffleArray(answers);
+
+  // Aggiorna i pulsanti delle risposte
+  answerButtons.forEach((button, index) => {
+    if (answers[index]) {
+      button.textContent = answers[index];
+      button.style.display = "block";
+      button.onclick = () => selectAnswer(answers[index]);
+    } else {
+      button.style.display = "none";
+    }
+  });
+
+  startCountdown();
+}
+// Funzione per mescolare un array
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+// Funzione per gestire la selezione della risposta
+function selectAnswer(selectedAnswer) {
+  const question = questions[currentQuestionIndex];
+  const correctAnswer = question.correct_answer;
+
+  // Aggiungi la risposta dell'utente all'array userAnswers
+  userAnswers.push({
+    question: question.question,
+    selectedAnswer,
+    correctAnswer,
+    isCorrect: selectedAnswer === correctAnswer,
+  });
+
+  // Incrementa il punteggio se la risposta è corretta
+  if (selectedAnswer === correctAnswer) {
+    score++;
+  }
+
+  // Carica la prossima domanda
+  clearInterval(interval); // Ferma il timer corrente
+  loadNextQuestion();
+}
+
+// Funzione per terminare il quiz e mostrare il punteggio finale
+function endTest() {
+  alert(`Test completato! Il tuo punteggio è: ${score}`);
+  console.log("User Answers:", userAnswers);
+  // Visualizza il punteggio e le risposte
+}
+
+// Inizia il quiz caricando la prima domanda
+loadQuestion();
