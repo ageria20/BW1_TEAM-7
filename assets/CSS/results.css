@@ -9,6 +9,9 @@ body {
     height: 100vh;
     /* margin-bottom: 150px; // Variazione del margine */ 
 }
+main{
+    max-width: 900px;
+}
 
 header { 
     max-width: 900px;
@@ -25,22 +28,18 @@ header {
     
 }
 
-#titleContainer {
-    max-width: 400px;
-}
-
 
 h1 {
     width: 100%;
+
+    width: 100vw;
+
     font-family: "Outfit", "sans-serif";
     font-size: 79px;
     color: white;
     text-align: center;
 }
 
-span {
-    font-weight: 800;
-}
 
 h2 {
     font-family: "Outfit", "sans-serif";
@@ -53,11 +52,15 @@ h2 {
 
 
 
+
 p{
     margin-top: 1rem ;
 }
 .mychartCont {
     width: 100%;
+}
+.mychartCont {
+    width: 100vw;
     height: 400px;
     margin: auto;
 }
@@ -66,13 +69,15 @@ p{
     width: 300px;
     height: 300px;
     margin: auto;
+    box-shadow: 0px 0px 38px -10px black;
+    border-radius: 50%;
 }
 
 
 
 #resultContainer {
     text-align: center;
-    width: 100%;
+    width: 100vw;
     color: white;
     font-family: "Inter", "sans-serif";
     line-height: 1;
@@ -98,12 +103,14 @@ color: white;
 
 #correctAnsers p {
     color: white;
+    text-align: left;
     font-family: "Outfit", "sans-serif";
-    transform: translate(170px, 59px);
+    /* transform: translate(170px, 59px); */
 }
 
 #correctAnsers h2 {
     color: white;
+    text-align: left;
     font-family: "Outfit", "sans-serif";
     margin: 0;
 }
@@ -118,11 +125,34 @@ color: white;
 #wrongAnswer h2 {
     color: white;
     font-family: "Outfit", "sans-serif";
+    text-align: right;
     
 }
 
 #wrongAnswer p {
     color: white;
     font-family: "Outfit", "sans-serif";
-    transform: translate(-168px, -11px);
+    text-align: right;
+}
+
+#btnContainer {
+    width: 100vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#rateUs {
+    font-size: 24px;
+    font-family: "Outfit", "sans-serif";
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    border: 1px solid white;
+    background: none;
+    color: white;
+    width: 15rem;
+    height: 4rem;
+    padding: 1rem;
+    margin-top: 5rem;
+    box-shadow: 0px 0px 38px -20px #00FFFF;
 }
