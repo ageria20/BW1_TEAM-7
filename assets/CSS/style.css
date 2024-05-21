@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+<<<<<<<<< Temporary merge branch 1:assets/CSS/style.css
+
+
+
+
+=========
+>>>>>>>>> Temporary merge branch 2:assets/CSS/style.css
 body {
+    overflow-x: hidden;
     background-image: url("../img/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,8 +29,9 @@ header {
     width: 13rem;
     height: 3rem;
     padding: 2rem 0;
-    margin-top: 2rem;
-    
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #titleContainer {
@@ -131,7 +140,7 @@ form {
 #timer {
     position: relative;
     display: inline-block;
-    margin-left: 50rem;
+    margin-left: 86rem;
     margin-bottom: 0;
     max-width: 180px;
     height: 178px;
@@ -148,7 +157,7 @@ form {
     font-family: "Outfit", "sans-serif";
     line-height: 1;
     font-weight: 200;
-    
+
 }
 
 .remainingSeconds {
@@ -156,6 +165,8 @@ form {
     display: block;
     font-weight: 300;
 }
+
+
 
 h2 {
     font-family: "Outfit", "sans-serif";
@@ -191,81 +202,54 @@ p{
 .answer {
     display: inline-block;
     width: 300px;
-    height: 75px;
+    height: 65px;
     text-align: center;
     border-radius: 50px;
     margin-left: 35px;
     margin-top: 20px;
-    opacity: 0.1;
-    box-shadow: 0px -3px 7px 4px #D20094;
+    font-family: "Inter","sans-serif";
+    box-shadow: 0px -3px 7px 4px #c0c0c0;
     border: none;
+    color: white;
+    line-height: 65PX;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
-#myChart {
-    width: 350px;
-    height: 350px;
-    margin: auto;
+.answer:hover {
+    background-color: #D20094; /* Cambia il colore al passaggio del mouse */
 }
+.answer.selected {
+    background-color: #D20094; 
+}
+.answersContainer {
 
-/* .mychartCont {
-    width: 500px;
-    height: 500px;
-    margin: auto;
-} */
-
-#resultContainer {
     text-align: center;
-    width: 100%;
-    color: white;
-    font-family: "Inter", "sans-serif";
-    line-height: 1;
-    margin-bottom: 4rem;
-}
-
-#resultContainer h1 {
-    margin-bottom: 0;
-}
-
-#resultContainer p{
-    font-size: 24px;
     display: inline-block;
-}
-
-#correctAnsers{
-transform: translate(73px, 184px);
-text-align: left;
-width: 25%;
-color: white;
-
-}
-
-#correctAnsers p {
-    color: white;
-    font-family: "Outfit", "sans-serif";
-    transform: translate(170px, 59px);
-}
-
-#correctAnsers h2 {
-    color: white;
-    font-family: "Outfit", "sans-serif";
-    margin: 0;
-}
-
-#wrongAnswer{
-    transform: translate(1300px, -464px);
-    text-align: right;
-    width: 25%;
-    color: white;
+    width: 700px;
+        /* transform: translate(289px, 10px); */
+        margin: auto;
     }
-
-#wrongAnswer h2 {
-    color: white;
-    font-family: "Outfit", "sans-serif";
     
+#quizzContainer {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        transform: translate(10px, -144px); 
 }
 
-#wrongAnswer p {
-    color: white;
+#questionNumberContainer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    
+  }
+  
+  #questionNumber {
     font-family: "Outfit", "sans-serif";
-    transform: translate(-168px, -11px);
-}
+    font-size: 20px;
+    color: white; }
+
+    
