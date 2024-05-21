@@ -1,90 +1,97 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 body {
-    background-image: url("../img/bg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
 }
 
-header { 
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 2rem;
+header {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 #epicodeLogo {
-    width: 13rem;
-    height: 3rem;
-    padding: 2rem 0;
-    margin-top: 5rem;
-    margin-left: auto;
-    margin-right: auto;
+  width: 13rem;
+  height: 3rem;
+  padding: 2rem 0;
+  margin-top: 5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #titleContainer {
-    max-width: 400px;
+  max-width: 400px;
 }
 
-
 h1 {
-    font-family: "Outfit", "sans-serif";
-    font-size: 60px;
-    color: white;
+  font-family: "Outfit", "sans-serif";
+  font-size: 60px;
+  color: white;
+}
+#titleFeedback h1 {
+  text-align: center;
 }
 
 span {
-    font-weight: 800;
+  font-weight: 800;
 }
 
-
 #container {
-    margin-top: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+  margin-top: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #introduction {
-    max-width: 550px;
+  max-width: 550px;
 }
 
 h2 {
-    font-family: "Inter", "sans-serif";
-    font-size: 30px;
-    color: #D20094;
-    font-weight: 700;
-    margin-top: 2rem;
+  font-family: "Inter", "sans-serif";
+  font-size: 30px;
+  color: #d20094;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+h3 {
+  font-family: "Inter", "sans-serif";
+  font-size: 28px;
+  color: white;
+  font-weight: 300;
+  margin-top: 3rem;
+  text-align: center;
 }
 
 #introduction > p {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-    padding: 1rem 0;
-    
+  font-family: "Inter", "sans-serif";
+  font-size: 16px;
+  color: white;
+  padding: 1rem 0;
 }
 
 #descriptionList {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-    margin-top: 2rem;
-    padding-left: 1.5rem;
-    line-height: 1.8;
-} 
-
-form {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-    margin-top: 5rem;
+  font-family: "Inter", "sans-serif";
+  font-size: 16px;
+  color: white;
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  line-height: 1.8;
 }
 
+form {
+  font-family: "Inter", "sans-serif";
+  font-size: 16px;
+  color: white;
+  margin-top: 5rem;
+}
 
 /* input[type="checkbox"]{
     width: 1em;
@@ -94,92 +101,123 @@ form {
     accent-color: green;
   } */
 
-  input[type="checkbox"] {
-    appearance: none;
-    width: 1.2em;
-    height: 1.2em;
-    border: 2px solid white;
-    background-color: transparent;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  input[type="checkbox"]:checked::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0.6em;
-    height: 0.6em;
-    background-color: green;
-    transform: translate(-50%, -50%);
+input[type="checkbox"] {
+  appearance: none;
+  width: 1.2em;
+  height: 1.2em;
+  border: 2px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
 
-  }
+input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.6em;
+  height: 0.6em;
+  background-color: green;
+  transform: translate(-50%, -50%);
+}
 
-  label{
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-  }
+label {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
 
-
-  
 .proceedBtn {
-    width: 13rem;
-    padding: 1rem;
-    border: none;
-    box-shadow: 0px 0px 38px 3px #00FFFF;
-    background-color: #00FFFF;
-    font-size: 20px;
-    margin-left: 11rem;
-    font-family: "Outfit", "sans-serif";
-    font-weight: 800;
+  width: 13rem;
+  padding: 1rem;
+  border: none;
+  box-shadow: 0px 0px 38px 3px #00ffff;
+  background-color: #00ffff;
+  font-size: 20px;
+  margin-left: 11rem;
+  font-family: "Outfit", "sans-serif";
+  font-weight: 800;
 }
 
 #timer {
-    position: relative;
-    display: inline-block;
-    margin-left: 80rem;
-    max-width: 180px;
-    height: 160px;
-    text-align: center;
-    font-size: 10px;
+  position: relative;
+  display: inline-block;
+  margin-left: 80rem;
+  max-width: 180px;
+  height: 160px;
+  text-align: center;
+  font-size: 10px;
 }
 #textTimer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #3498db;
-    font-size: 14px;
-    font-family: "Outfit", "sans-serif";
-    line-height: 1.5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #3498db;
+  font-size: 14px;
+  font-family: "Outfit", "sans-serif";
+  line-height: 1.5;
 }
 
-
 h2 {
-    font-family: "Outfit", "sans-serif";
-    font-size: 50px;
-    color: white;
-    text-align: center;
-    margin-top: 12rem;
-    margin-bottom: 5rem;
+  font-family: "Outfit", "sans-serif";
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  margin-top: 12rem;
+  margin-bottom: 5rem;
 }
 
 .answerBtn {
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .answer {
-    display: inline-block;
-    width: 300px;
-    height: 75px;
-    text-align: center;
-    border-radius: 50px;
-    margin-left: 35px;
-    margin-top: 20px;
-    opacity: 0.1;
-    box-shadow: 0px -3px 7px 4px #D20094;
-    border: none;
+  display: inline-block;
+  width: 300px;
+  height: 75px;
+  text-align: center;
+  border-radius: 50px;
+  margin-left: 35px;
+  margin-top: 20px;
+  opacity: 0.1;
+  box-shadow: 0px -3px 7px 4px #d20094;
+  border: none;
+}
+#inputContainer {
+  margin: 2rem;
+  border-bottom: #d20094 solid 2px;
+  max-width: 850px;
+  margin: auto;
+  margin-top: 2rem;
+}
+input {
+  font-family: "Outfit", "sans-serif";
+  border: none;
+  background-color: transparent;
+  color: white;
+  padding: 1rem 3.5rem;
+  font-size: 18px;
+  width: 750px;
+}
+#buttonContainer {
+  text-align: center;
+  margin: 2rem;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 13rem;
+  padding: 1rem;
+  border: none;
+  box-shadow: 0px 0px 38px 3px #00ffff;
+  background-color: #00ffff;
+  font-size: 20px;
+  font-family: "Outfit", "sans-serif";
+  font-weight: 700;
+  margin-top: 2.5rem;
 }
