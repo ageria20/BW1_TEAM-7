@@ -121,9 +121,9 @@ const updateDisplay = (countdown) => {
   const minutes = Math.floor(countdown / 61);
   const remainingSeconds = countdown % 61;
   const timer = document.getElementById("textTimer");
-  timer.innerText = `
+  timer.innerHTML = `
   seconds 
-  ${remainingSeconds} 
+  <span class="remainingSeconds">${remainingSeconds}</span>
    remaining`;
   timer.style.color = "white";
 };
