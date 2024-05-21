@@ -31,130 +31,15 @@ header {
 
 
 h1 {
-    width: 500px;
+    width: 100%;
     font-family: "Outfit", "sans-serif";
     font-size: 79px;
     color: white;
+    text-align: center;
 }
 
 span {
     font-weight: 800;
-}
-
-
-#container {
-    margin-top: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#introduction {
-    max-width: 550px;
-    color: solid #D20094;
-}
-
-/* h2 {
-    font-family: "Inter", "sans-serif";
-    font-size: 30px;
-    color: solid #D20094; #C2128D  
-    font-weight: 700;
-    margin-top: 2rem; 
-    margin-top: 100%; 
- } 
- */
-#introduction > p {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-   /*  padding: 1rem 0; */
-    
-}
-
-#descriptionList {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-    margin-top: 2rem;
-    padding-left: 1.5rem;
-    line-height: 1.8;
-} 
-
-form {
-    font-family: "Inter", "sans-serif";
-    font-size: 16px;
-    color: white;
-    margin-top: 5rem;
-}
-
- input[type="checkbox"] {
-    appearance: none;
-    width: 1.2em;
-    height: 1.2em;
-    border: 2px solid white;
-    background-color: transparent;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  input[type="checkbox"]:checked::before {
-    content: ""; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0.6em;
-    height: 0.6em;
-    background-color: green;
-    transform: translate(-50%, -50%);
-
-  }
-  input[type="checkbox"]{
-
-    margin-top: 15px;
-    margin-right: 15px;
-    transform: translate(20%, 28%);
-  }
-
-  
-.proceedBtn {
-    width: 13rem;
-    padding: 1rem;
-    border: none;
-    box-shadow: 0px 0px 38px 3px #00FFFF;
-    background-color: #00FFFF;
-    font-size: 20px;
-    margin-left: 11rem;
-    font-family: "Outfit", "sans-serif";
-    font-weight: 800;
-}
-
-#timer {
-    position: relative;
-    display: inline-block;
-    margin-left: 50rem;
-    margin-bottom: 0;
-    max-width: 180px;
-    height: 178px;
-    text-align: center;
-    font-size: 10px;
-}
-#textTimer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #3498db;
-    font-size: 13px;
-    font-family: "Outfit", "sans-serif";
-    line-height: 1;
-    font-weight: 200;
-    
-}
-
-.remainingSeconds {
-    font-size: 50px;
-    display: block;
-    font-weight: 300;
 }
 
 h2 {
@@ -166,52 +51,24 @@ h2 {
     margin-bottom: 5rem; 
 }
 
-h4 {
-    font-family: "Outfit", "sans-serif";
-    font-size: 32px;
-    font-weight: bold;
-    color: #C2128D;
-    text-align: none;
-    margin-top: 3rem;
-    margin-bottom: 0.5rem;
-}
-
 
 
 p{
     margin-top: 1rem ;
 }
-
-.answerBtn {
-    width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.answer {
-    display: inline-block;
-    width: 300px;
-    height: 75px;
-    text-align: center;
-    border-radius: 50px;
-    margin-left: 35px;
-    margin-top: 20px;
-    opacity: 0.1;
-    box-shadow: 0px -3px 7px 4px #D20094;
-    border: none;
+.mychartCont {
+    width: 100%;
+    height: 400px;
+    margin: auto;
 }
 
 #myChart {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     margin: auto;
 }
 
-/* .mychartCont {
-    width: 500px;
-    height: 500px;
-    margin: auto;
-} */
+
 
 #resultContainer {
     text-align: center;
@@ -219,10 +76,10 @@ p{
     color: white;
     font-family: "Inter", "sans-serif";
     line-height: 1;
-    margin-bottom: 4rem;
+    margin-bottom: 0;
 }
 
-#resultContainer h1 {
+#resultTitle {
     margin-bottom: 0;
 }
 
