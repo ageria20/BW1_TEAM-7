@@ -23,3 +23,7 @@ stars.forEach((star, index) => {
 });
 
 const feedback = document.querySelector("button");
+console.log(feedback);
+feedback.addEventListener("click", () => {
+  alert("Grazie per aver completato il test!");
+});
