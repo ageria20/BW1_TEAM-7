@@ -66,6 +66,13 @@ h2 {
     margin-bottom: 5rem;
 }
 
+p{
+    margin-top: 1rem ;
+}
+.mychartCont {
+    width: 100%;
+}
+
 .mychartCont {
     width: 100vw;
     height: 400px;
@@ -134,10 +141,11 @@ color: white;
     }
 
 #wrongAnswer h2 {
-    color: white;
     font-family: "Outfit", "sans-serif";
+    font-size: 60px;
+    color: white;
     text-align: right;
-    
+    margin-top: 12rem;
 }
 
 #wrongAnswer p {
