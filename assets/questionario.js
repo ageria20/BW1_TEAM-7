@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       countdown--;
       updateDisplay(countdown); // Aggiorna il display del timer
       updateCircleProgress(); // Aggiorna il cerchio di progresso
-      if (countdown < 0) {
+      if (countdown <= 0) {
         clearInterval(interval); // Ferma il timer quando il countdown arriva a 0
         timerFinished(); // Chiama la funzione quando il timer finisce
       }
@@ -132,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione chiamata quando il timer finisce
   const timerFinished = () => {
-    alert("Il tempo per questa domanda è scaduto!");
     loadNextQuestion(); // Carica la prossima domanda
   };
 
@@ -223,12 +222,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Carica la prossima domanda dopo un breve ritardo per mostrare la selezione
     setTimeout(() => {
       loadNextQuestion(); // Carica la prossima domanda
-    }, 1300);
+    }, 100);
   }
 
   // Funzione per terminare il quiz e mostrare il punteggio finale
   function endTest() {
-    alert(`Test completato! Il tuo punteggio è: ${score}`);
     console.log("User Answers:", userAnswers); // Visualizza le risposte dell'utente nel console log
     localStorage.setItem("score", score); // Salva il punteggio in localStorage
     localStorage.setItem("totalQuestions", totalQuestions); // Salva il numero di domande totali in localStorage
