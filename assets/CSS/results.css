@@ -11,7 +11,7 @@ body {
     height: 100vh;
 }
 main{
-    max-width: 100%;
+    max-width: 900px;
 }
 
 header { 
@@ -115,7 +115,7 @@ p{
     display: inline-block;
 }
 
-#correctAnsers{
+#correctAnswer{
 text-align: left;
 width: 25%;
 color: white;
@@ -124,7 +124,7 @@ transform: translate(285px, 114px);
 
 }
 
-#correctAnsers p {
+#correctAnswer p {
     align-content: right;
     color: white;
     text-align: left;
@@ -132,7 +132,7 @@ transform: translate(285px, 114px);
     /* transform: translate(170px, 59px); */
 }
 
-#correctAnsers h2 {
+#correctAnswer h2 {
     color: white;
     text-align: left;
     font-family: "Outfit", "sans-serif";
@@ -144,7 +144,7 @@ transform: translate(285px, 114px);
     width: 25%;
     color: white;
     margin-left: 60vw;
-    transform: translate(-62px, -235px);
+    transform: translate(-62px, -233px);
     }
 
 #wrongAnswer h2 {
@@ -165,12 +165,14 @@ transform: translate(285px, 114px);
     font-size: 60px;
     font-family: "Outfit", "sans-serif";
     font-weight: 800;
+    text-align: center;
 }
 
 #wrongPercentage {
     font-size: 60px;
     font-family: "Outfit", "sans-serif";
     font-weight: 800;
+    text-align: center;
 }
 
 #btnContainer {

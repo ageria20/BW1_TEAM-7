@@ -21,16 +21,16 @@
         <p id="score">The Summary of your Answers:</p>
       </section>
       <div class="mychartCont">
-        <div id="correctAnsers">
+        <div id="correctAnswer">
           <h2>Correct</h2>
           <p id="correctPercentage"></p>
-          <p>numero domande</p>
+          <p id="correctAnswers"></p>
         </div>
         <canvas id="myChart"><span></span></canvas>
         <div id="wrongAnswer">
           <h2>Wrong</h2>
           <p id="wrongPercentage"></p>
-          <p>numero domande</p>
+          <p id="wrongAnswers"></p>
         </div>
       </div>
       <div id="btnContainer">
@@ -44,13 +44,14 @@
         // Recupera il punteggio da localStorage
         const score = localStorage.getItem("score");
         const questionsLength = localStorage.getItem("totalQuestions");
-        const totalQuestions = 10; // Totale domande nel quiz
+        const questionIndex = localStorage.getItem("currentQuestionsIndex");
+        const totalQuestions = questionsLength; // Totale domande nel quiz
 
         const correctPercentage = document.querySelector("#correctPercentage");
         const wrongPercentage = document.querySelector("#wrongPercentage");
 
-        // Mostra il punteggio nella nuova pagina
-        const scoreElement = document.getElementById("score");
+        const correctAnswers = document.querySelector("#correctAnswers");
+        const wrongAnswers = document.querySelector("#wrongAnswers");
 
         // Calcola le percentuali per il grafico
         const percentageCorrect = (score / totalQuestions) * 100;
@@ -62,6 +63,15 @@
 
         if (correctPercentage) {
           wrongPercentage.textContent = percentageWrong + "%";
+        }
+        if (correctAnswers) {
+          correctAnswers.textContent =
+            score + " / " + totalQuestions + " questions";
+        }
+
+        if (wrongAnswers) {
+          wrongAnswers.textContent =
+            totalQuestions - score + " / " + totalQuestions + " questions";
         }
 
         // Crea il grafico

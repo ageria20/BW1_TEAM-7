@@ -232,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("User Answers:", userAnswers); // Visualizza le risposte dell'utente nel console log
     localStorage.setItem("score", score); // Salva il punteggio in localStorage
     localStorage.setItem("totalQuestions", totalQuestions); // Salva il numero di domande totali in localStorage
+    localStorage.setItem("currentQuestionIndex", currentQuestionIndex); // Salva l'indice della domanda corrente in localStorage
     window.location.href = "results.html"; // Reindirizza alla pagina dei risultati
   }
 
