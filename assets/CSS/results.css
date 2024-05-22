@@ -3,6 +3,7 @@
 
 
 body {
+    overflow-x: hidden;
     background-image: url("../img/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,11 +11,11 @@ body {
     height: 100vh;
 }
 main{
-    max-width: 900px;
+    max-width: 100%;
 }
 
 header { 
-    max-width: 900px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
@@ -23,9 +24,8 @@ header {
 #epicodeLogo {
     width: 13rem;
     height: 3rem;
-    padding: 2rem 0;
-    margin-top: 2rem;
-    
+    padding: 3rem 0;
+    margin-left: 25vw;
 }
 
 #titleContainer {
@@ -63,7 +63,6 @@ h2 {
     color: white;
     text-align: center;
     margin-top: 12rem;
-    margin-bottom: 5rem;
 }
 
 p{
@@ -77,14 +76,19 @@ p{
     width: 100vw;
     height: 400px;
     margin: auto;
+    padding-bottom: 2rem;
 }
 
 #myChart {
-    width: 350px;
-    height: 350px;
-    margin: auto;
-    box-shadow: 0px 0px 38px -10px black;
-    border-radius: 50%;
+    display: block;
+    box-sizing: border-box;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    /* margin: auto; */
+    margin-left: 35vw;
+    margin-bottom: 14em;
+    transform: translate(97px, -160px);
 }
 
 /* .mychartCont {
@@ -112,14 +116,16 @@ p{
 }
 
 #correctAnsers{
-transform: translate(73px, 184px);
 text-align: left;
 width: 25%;
 color: white;
+margin-left: 4rem;
+transform: translate(285px, 114px);
 
 }
 
 #correctAnsers p {
+    align-content: right;
     color: white;
     text-align: left;
     font-family: "Outfit", "sans-serif";
@@ -134,15 +140,16 @@ color: white;
 }
 
 #wrongAnswer{
-    transform: translate(1300px, -464px);
     text-align: right;
     width: 25%;
     color: white;
+    margin-left: 60vw;
+    transform: translate(-62px, -235px);
     }
 
 #wrongAnswer h2 {
     font-family: "Outfit", "sans-serif";
-    font-size: 60px;
+    font-size: 50px;
     color: white;
     text-align: right;
     margin-top: 12rem;
@@ -154,10 +161,23 @@ color: white;
     text-align: right;
 }
 
+#correctPercentage {
+    font-size: 60px;
+    font-family: "Outfit", "sans-serif";
+    font-weight: 800;
+}
+
+#wrongPercentage {
+    font-size: 60px;
+    font-family: "Outfit", "sans-serif";
+    font-weight: 800;
+}
+
 #btnContainer {
     width: 100vw;
     margin: 0 auto;
     text-align: center;
+    transform: translate(8px, -54px);
 }
 
 #rateUs {

@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentQuestionIndex = 0; // Indice della domanda corrente
   let score = 0; // Punteggio del giocatore
   let userAnswers = []; // Storico delle risposte dell'utente
+  const totalQuestions = questions.length; // Numero di domande totali
 
   // Funzione per avviare il conto alla rovescia
   const startCountdown = () => {
@@ -120,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per aggiornare il display del timer
   const updateDisplay = (countdown) => {
-    const remainingSeconds = countdown % 60;
+    const remainingSeconds = countdown % 61;
     const timer = document.getElementById("textTimer");
     timer.innerHTML = `
     seconds 
@@ -137,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per aggiornare il cerchio di progresso
   function updateCircleProgress() {
-    const progress = (countdown / 60) * 346;
+    const progress = (countdown / 61) * 346;
     const circleProgress = document.querySelector("#circle-progress");
     circleProgress.style.strokeDashoffset = 346 - progress;
   }
@@ -229,6 +230,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function endTest() {
     alert(`Test completato! Il tuo punteggio è: ${score}`);
     console.log("User Answers:", userAnswers); // Visualizza le risposte dell'utente nel console log
+    localStorage.setItem("score", score); // Salva il punteggio in localStorage
+    localStorage.setItem("totalQuestions", totalQuestions); // Salva il numero di domande totali in localStorage
+    window.location.href = "results.html"; // Reindirizza alla pagina dei risultati
   }
 
   // Inizia il quiz caricando la prima domanda
