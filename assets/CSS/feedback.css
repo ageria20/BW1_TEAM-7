@@ -112,21 +112,9 @@ button {
 }
 
 .filled {
-  display: inline-block;
-  padding: 28px 28px;
-  background-image: url(/assets/img/star.svg);
-  background-size: contain;
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
   filter: brightness(1);
 }
 
 .star.hovered {
-  display: inline-block;
-  padding: 28px 28px;
-  background-image: url(/assets/img/star.svg);
-  background-size: contain;
-  margin-left: 0.8rem;
-  margin-right: 0.8rem;
   filter: brightness(1);
 }

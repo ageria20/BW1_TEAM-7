@@ -1,17 +1,28 @@
 const stars = document.querySelectorAll(".star");
 // console.log(stars);
 
+let selectedStar = false;
+
 stars.forEach((star, index) => {
   star.addEventListener("click", () => {
     // console.log(index);
+    selectedStar = true;
     stars.forEach((star, index2) => {
-      index >= index2 ? star.classList.add("filled") : star.classList.remove("filled");
+      if (index >= index2) {
+        star.classList.add("filled");
+      } else {
+        star.classList.remove("filled");
+      }
     });
   });
 
   star.addEventListener("mouseover", () => {
     stars.forEach((star, index2) => {
-      index >= index2 ? star.classList.add("hovered") : star.classList.remove("hovered");
+      if (index >= index2) {
+        star.classList.add("hovered");
+      } else {
+        star.classList.remove("hovered");
+      }
     });
   });
 
@@ -25,5 +36,11 @@ stars.forEach((star, index) => {
 const feedback = document.querySelector("button");
 // console.log(feedback);
 feedback.addEventListener("click", () => {
-  alert("Grazie per aver completato il test!");
+  if (selectedStar === true) {
+    alert("Grazie per aver completato il test!");
+    const welcome = document.querySelector("#welcome");
+    welcome.setAttribute("href", "./welcome.html");
+  } else {
+    alert("Per favore, seleziona almeno una stella!");
+  }
 });
