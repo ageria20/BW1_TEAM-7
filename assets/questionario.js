@@ -157,9 +157,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function loadQuestion() {
     const question = questions[currentQuestionIndex];
     questionElement.textContent = question.question; // Visualizza la domanda corrente
-    questionNumberElement.textContent = `QUESTION ${currentQuestionIndex + 1}/${
-      questions.length
-    }`; // Aggiorna il numero della domanda
+    questionNumberElement.textContent = `QUESTION  ${
+      currentQuestionIndex + 1
+    }  /  ${questions.length}`;
 
     // Mescola le risposte
     const answers = [question.correct_answer, ...question.incorrect_answers];

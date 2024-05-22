@@ -20,13 +20,22 @@
         <h1 id="resultTitle">Results</h1>
         <p id="score">The Summary of your Answers:</p>
       </section>
+      <p id="congrats"></p>
+
       <div class="mychartCont">
+        <p id="congrats">
+          <span id="row1">Congratulations!</span><br />
+          <span id="row2">You passed the exam.</span><br /><br />
+          We'll send you the certificate in few minutes. Check your email
+          (including promotions / spam folder)
+        </p>
         <div id="correctAnswer">
           <h2>Correct</h2>
           <p id="correctPercentage"></p>
           <p id="correctAnswers"></p>
         </div>
-        <canvas id="myChart"><span></span></canvas>
+        <canvas id="myChart"></canvas>
+
         <div id="wrongAnswer">
           <h2>Wrong</h2>
           <p id="wrongPercentage"></p>
@@ -53,6 +62,8 @@
         const correctAnswers = document.querySelector("#correctAnswers");
         const wrongAnswers = document.querySelector("#wrongAnswers");
 
+        const congrats = document.querySelector("#congrats");
+
         // Calcola le percentuali per il grafico
         const percentageCorrect = (score / totalQuestions) * 100;
         const percentageWrong = 100 - percentageCorrect;
@@ -72,6 +83,12 @@
         if (wrongAnswers) {
           wrongAnswers.textContent =
             totalQuestions - score + " / " + totalQuestions + " questions";
+        }
+
+        if (percentageCorrect >= 60) {
+          congrats.style.display = "none";
+        } else {
+          congrats.style.display = "block";
         }
 
         // Crea il grafico
