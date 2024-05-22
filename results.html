@@ -20,7 +20,7 @@
         <h1 id="resultTitle">Results</h1>
         <p id="score">The Summary of your Answers:</p>
       </section>
-      <p id="congrats"></p>
+      <!-- <p id="congrats"></p> -->
 
       <div class="mychartCont">
         <p id="congrats">
@@ -85,12 +85,9 @@
             totalQuestions - score + " / " + totalQuestions + " questions";
         }
 
-        if (percentageCorrect >= 60) {
+        if (percentageCorrect < 60) {
           congrats.style.display = "none";
-        } else {
-          congrats.style.display = "block";
         }
-
         // Crea il grafico
         const ctx = document.getElementById("myChart").getContext("2d");
         new Chart(ctx, {
