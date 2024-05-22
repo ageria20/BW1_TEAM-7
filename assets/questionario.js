@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per aggiornare il display del timer
   const updateDisplay = (countdown) => {
-    const remainingSeconds = countdown % 61;
+    const remainingSeconds = countdown % 60;
     const timer = document.getElementById("textTimer");
     timer.innerHTML = `
     seconds 
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funzione per aggiornare il cerchio di progresso
   function updateCircleProgress() {
-    const progress = (countdown / 61) * 346;
+    const progress = (countdown / 60) * 346;
     const circleProgress = document.querySelector("#circle-progress");
     circleProgress.style.strokeDashoffset = 346 - progress;
   }
