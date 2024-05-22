@@ -37,10 +37,10 @@ const feedback = document.querySelector("button");
 // console.log(feedback);
 feedback.addEventListener("click", () => {
   if (selectedStar === true) {
-    alert("Grazie per aver completato il test!");
+    alert("Thanks for your feedback!");
     const welcome = document.querySelector("#welcome");
     welcome.setAttribute("href", "./welcome.html");
   } else {
-    alert("Per favore, seleziona almeno una stella!");
+    alert("Please select a star first!");
   }
 });
