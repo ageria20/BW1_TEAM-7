@@ -166,4 +166,10 @@ h2 {
     color: white; 
 padding: 2rem;}
 
+.answer.incorrect {
+    background-color: #F44336; /* Rosso per risposte errate */
     
+  }
+  .answer.correct {
+    background-color: #4CAF50; /* Verde per risposte corrette */
+}

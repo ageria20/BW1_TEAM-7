@@ -205,24 +205,31 @@ document.addEventListener("DOMContentLoaded", function () {
       score++;
     }
 
-    // Rimuove la classe 'selected' da tutti i bottoni
+    // Rimuove la classe 'selected', 'correct', 'incorrect' da tutti i bottoni
     const answerButtons = document.querySelectorAll(".answer");
     answerButtons.forEach((button) => {
-      button.classList.remove("selected");
+      button.classList.remove("selected", "correct", "incorrect");
+      // Aggiunge la classe 'correct' alla risposta corretta
+      if (button.dataset.answer === correctAnswer) {
+        button.classList.add("correct");
+      }
+       // Aggiunge la classe 'incorrect' alla risposta selezionata errata
+      if (button.dataset.answer === selectedAnswer && selectedAnswer !== correctAnswer) {
+        button.classList.add("incorrect");
+      }
     });
-
     // Aggiunge la classe 'selected' al bottone cliccato
-    const selectedButton = answerList.querySelector(
-      `li[data-answer="${selectedAnswer}"]`
-    );
+    const selectedButton = answerList.querySelector(`li[data-answer="${selectedAnswer}"]`);
     selectedButton.classList.add("selected");
+
+    
 
     clearInterval(interval); // Ferma il timer corrente
 
     // Carica la prossima domanda dopo un breve ritardo per mostrare la selezione
     setTimeout(() => {
       loadNextQuestion(); // Carica la prossima domanda
-    }, 100);
+    }, 900);
   }
 
   // Funzione per terminare il quiz e mostrare il punteggio finale
