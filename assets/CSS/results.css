@@ -185,13 +185,24 @@ transform: translate(285px, 0px);
     transform: translate(58px, 148px);
 }
 
-#row1 {
+.row1 {
     font-size: 20px;
 }
 
-#row2 {
+.row2 {
     color:#00FFFF;
     font-size: 20px;
+}
+
+#notPassed {
+    display: none;
+    font-size: 16px;
+    font-family: "Inter", "sans-serif";
+    color: white;
+    width: 12vw;
+    text-align: center;
+    margin-left: 50rem;
+    transform: translate(58px, 148px);
 }
 
 #btnContainer {

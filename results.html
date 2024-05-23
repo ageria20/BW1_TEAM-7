@@ -20,14 +20,19 @@
         <h1 id="resultTitle">Results</h1>
         <p id="score">The Summary of your Answers:</p>
       </section>
-      <p id="congrats"></p>
+      <!-- <p id="congrats"></p> -->
 
       <div class="mychartCont">
         <p id="congrats">
-          <span id="row1">Congratulations!</span><br />
-          <span id="row2">You passed the exam.</span><br /><br />
+          <span class="row1">Congratulations!</span><br />
+          <span class="row2">You passed the exam.</span><br /><br />
           We'll send you the certificate in few minutes. Check your email
           (including promotions / spam folder)
+        </p>
+        <p id="notPassed">
+          <span class="row1">Sorry</span><br /><br />
+          <span class="row2">You didn't pass the exam.</span><br /><br />
+          You may try again
         </p>
         <div id="correctAnswer">
           <h2>Correct</h2>
@@ -63,6 +68,7 @@
         const wrongAnswers = document.querySelector("#wrongAnswers");
 
         const congrats = document.querySelector("#congrats");
+        const notPassed = document.querySelector("#notPassed");
 
         // Calcola le percentuali per il grafico
         const percentageCorrect = (score / totalQuestions) * 100;
@@ -85,12 +91,13 @@
             totalQuestions - score + " / " + totalQuestions + " questions";
         }
 
-        if (percentageCorrect >= 60) {
+        if (percentageCorrect < 60) {
           congrats.style.display = "none";
+          notPassed.style.display = "block";
         } else {
           congrats.style.display = "block";
+          notPassed.style.display = "none";
         }
-
         // Crea il grafico
         const ctx = document.getElementById("myChart").getContext("2d");
         new Chart(ctx, {
