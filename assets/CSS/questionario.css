@@ -9,7 +9,7 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
-    /* margin-bottom: 150px; // Variazione del margine */ 
+     
 }
 
 header { 
@@ -129,7 +129,7 @@ h2 {
     transition: background-color 0.3s ease;
 }
 .answer:hover {
-    background-color: #D20094; /* Cambia il colore al passaggio del mouse */
+    background-color: #D20094; 
 }
 .answer.selected {
     background-color: #D20094; 
@@ -167,9 +167,9 @@ h2 {
 padding: 2rem;}
 
 .answer.incorrect {
-    background-color: #F44336; /* Rosso per risposte errate */
+    background-color: #F44336; 
     
   }
   .answer.correct {
-    background-color: #4CAF50; /* Verde per risposte corrette */
+    background-color: #4CAF50; 
 }

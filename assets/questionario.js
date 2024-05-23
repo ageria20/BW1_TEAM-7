@@ -94,7 +94,6 @@ const questions = [
   },
 ];
 document.addEventListener("DOMContentLoaded", function () {
-  const timerElement = document.getElementById("timer");
   const questionNumberElement = document.getElementById("questionNumber"); // Seleziona il nuovo elemento
   const questionElement = document.getElementById("question");
   const answerList = document.getElementById("answerList");
@@ -167,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     answerList.innerHTML = ""; // Pulisce le risposte precedenti
 
     // Crea un elemento <li> per ogni risposta e lo aggiunge alla lista
-    answers.forEach((answer, index) => {
+    answers.forEach((answer) => {
       const li = document.createElement("li");
       li.className = "answer";
       li.dataset.answer = answer;
