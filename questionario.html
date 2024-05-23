@@ -16,14 +16,17 @@
       />
     </header>
     <main>
-      <select id="difficultySelect">
-        <option value="easy">EASY</option>
-        <option value="medium">MEDIUM</option>
-        <option value="hard">HARD</option>
-      </select>
-      <label style="color: white" for="numQuestions">NUMBER OF QUESTIONS:</label>
-      <input type="number" id="numQuestions" min="1" value="5" max="10" />
-     
+      <section id="selectChoice">
+        <label for="difficultySelect">CHOOSE THE DIFFICULTIES:</label>
+        <select id="difficultySelect">
+          <option value="easy">EASY</option>
+          <option value="medium">MEDIUM</option>
+          <option value="hard">HARD</option>
+        </select>
+        <label for="numQuestions">NUMBER OF QUESTIONS:</label>
+        <input type="number" id="numQuestions" min="1" value="5" max="10" />
+        <button id="startQuizButton">START QUIZ</button>
+      </section>
       <article id="timer">
         <svg>
           <circle
@@ -52,7 +55,6 @@
       </article>
       <section id="quizzContainer">
         <article id="questionsCont">
-          
           <h2 id="question"></h2>
         </article>
         <article class="answersContainer">
@@ -60,10 +62,7 @@
         </article>
       </section>
       <div id="questionNumberContainer">
-        <h3 id="questionNumber"></h3> 
-      </div>
-      <div class="bottone">
-        <button id="startQuizButton">START QUIZ</button>
+        <h3 id="questionNumber"></h3>
       </div>
     </main>
     <script src="./assets/questionario.js"></script>

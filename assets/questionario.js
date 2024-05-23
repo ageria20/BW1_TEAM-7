@@ -300,6 +300,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const questionElement = document.getElementById("question");
   const answerList = document.getElementById("answerList");
   const startQuizButton = document.getElementById("startQuizButton");
+  const timer = document.getElementById("timer");
+  timer.style.display = "none";
 
   let countdown = 60; // Imposta il timer a 60 secondi
   let interval; // Variabile per il timer
@@ -322,11 +324,8 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedQuestions = questionsHard.slice(0, numQuestions);
     }
 
-    document.getElementById("difficultySelect").style.display = "none";
-    document.querySelector('label[for="numQuestions"]').style.display = "none";
-    document.getElementById("numQuestions").style.display = "none";
-    document.querySelector(".bottone").style.display = "none";
-
+    document.getElementById("selectChoice").style.display = "none";
+    timer.style.display = "block";
     startQuiz(selectedQuestions);
   });
 
@@ -373,7 +372,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function loadQuestion() {
       const question = questions[currentQuestionIndex];
       questionElement.textContent = question.question; // Visualizza la domanda corrente
-      questionNumberElement.textContent = `QUESTION  ${currentQuestionIndex + 1}  /  ${questions.length}`;
+      questionNumberElement.textContent = `QUESTION  ${
+        currentQuestionIndex + 1
+      }  /  ${questions.length}`;
 
       const answers = [question.correct_answer, ...question.incorrect_answers];
       shuffleArray(answers); // Mescola l'array delle risposte
@@ -421,12 +422,17 @@ document.addEventListener("DOMContentLoaded", function () {
         if (button.dataset.answer === correctAnswer) {
           button.classList.add("correct");
         }
-        if (button.dataset.answer === selectedAnswer && selectedAnswer !== correctAnswer) {
+        if (
+          button.dataset.answer === selectedAnswer &&
+          selectedAnswer !== correctAnswer
+        ) {
           button.classList.add("incorrect");
         }
       });
 
-      const selectedButton = answerList.querySelector(`li[data-answer="${selectedAnswer}"]`);
+      const selectedButton = answerList.querySelector(
+        `li[data-answer="${selectedAnswer}"]`
+      );
       selectedButton.classList.add("selected");
 
       clearInterval(interval); // Ferma il timer corrente

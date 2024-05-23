@@ -75,11 +75,12 @@
         const percentageWrong = 100 - percentageCorrect;
 
         if (correctPercentage) {
-          correctPercentage.textContent = percentageCorrect + "%";
+          correctPercentage.textContent = percentageCorrect.toFixed(0) + "%";
         }
 
         if (correctPercentage) {
-          wrongPercentage.textContent = percentageWrong + "%";
+          // uso toFixed(2) mi gestisce quanti numeri voglio dopo la virgola
+          wrongPercentage.textContent = percentageWrong.toFixed(0) + "%";
         }
         if (correctAnswers) {
           correctAnswers.textContent =
