@@ -52,9 +52,9 @@ feedbackBtn.addEventListener("click", () => {
   } else {
     sectionSelec.style.display = "none";
     feedbackTitle.innerHTML = `Where is your feedback?!<br><br>
-    <img src="./assets/img/malta-malta-gifs.gif" alt=pedro racon">`;
+    <img src="./assets/img/malta-malta-gifs.gif" alt=pedro racon" style="width: 30rem">`;
     feedbackTitle.style.textAlign = "center";
-    feedbackSubtitle.innerText = "Please reload the page and give as a feedback!";
+    feedbackSubtitle.innerHTML = `<p>PLEASE LEAVE US A FEEDBACK</p><button onclick="window.location.reload(true);" style="width: 5rem"> <img src="./assets/img/arrow-back-outline.svg" style="width: 2rem"></button>`;
     getMain.appendChild(feedbackTitle);
     feedbackTitle.appendChild(feedbackSubtitle);
   }
