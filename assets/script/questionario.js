@@ -433,7 +433,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       setTimeout(() => {
         loadNextQuestion(); // Carica la prossima domanda
-      }, 900);
+      }, 300);
     }
 
     function endTest() {
