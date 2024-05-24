@@ -1,9 +1,9 @@
 const questionsEasy = [
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "Cosa significa CPU?",
+    question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
     incorrect_answers: [
       "Central Process Unit",
@@ -12,45 +12,45 @@ const questionsEasy = [
     ],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
     question:
-      "Nel linguaggio di programmazione Java, quale di queste parole chiave metteresti su una variabile per assicurarti che non venga modificata?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question: "Il logo di Snapchat è una campana.",
+    question: "The logo for Snapchat is a Bell.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
     question:
-      "I puntatori non erano utilizzati nel linguaggio di programmazione C originale; sono stati aggiunti successivamente in C++.",
+      "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
     question:
-      "Qual è il formato immagine più preferito per i loghi nel database Wikimedia?",
+      "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
     incorrect_answers: [".png", ".jpeg", ".gif"],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "Nel design web, cosa significa CSS?",
+    question: "In web design, what does CSS stand for?",
     correct_answer: "Cascading Style Sheet",
     incorrect_answers: [
       "Counter Strike: Source",
@@ -59,37 +59,36 @@ const questionsEasy = [
     ],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
     question:
-      "Qual è il nome in codice del sistema operativo mobile Android 7.0?",
+      "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
     incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question: "Su Twitter, qual è il limite di caratteri per un Tweet?",
+    question: "On Twitter, what is the character limit for a Tweet?",
     correct_answer: "140",
     incorrect_answers: ["120", "160", "100"],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question:
-      "Linux è stato creato per la prima volta come alternativa a Windows XP.",
+    question: "Linux was first created as an alternative to Windows XP.",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
   {
-    category: "Scienza: Computer",
+    category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
     question:
-      "Quale linguaggio di programmazione condivide il suo nome con un'isola in Indonesia?",
+      "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
@@ -122,7 +121,7 @@ const questionsMedium = [
     incorrect_answers: [
       "United States",
       "Germany",
-      "China (People&#039;s Republic of)",
+      "China (People&'s Republic of)",
     ],
   },
   {
@@ -166,11 +165,11 @@ const questionsMedium = [
     category: "Science: Computers",
     question:
       "In HTML, which non-standard tag used to be be used to make elements scroll across the viewport?",
-    correct_answer: "&lt;marquee&gt;&lt;/marquee&gt;",
+    correct_answer: "marquee&gt/marquee&gt;",
     incorrect_answers: [
-      "&lt;scroll&gt;&lt;/scroll&gt;",
-      "&lt;move&gt;&lt;/move&gt;",
-      "&lt;slide&gt;&lt;/slide&gt;",
+      "scroll&gt;/scroll&gt;",
+      "move&gt;/move&gt;",
+      "slide&gt;/slide&gt;",
     ],
   },
   {
@@ -250,13 +249,9 @@ const questionsHard = [
     difficulty: "hard",
     category: "Science: Computers",
     question:
-      "According to DeMorgan&#039;s Theorem, the Boolean expression (AB)&#039; is equivalent to:",
-    correct_answer: "A&#039; + B&#039;",
-    incorrect_answers: [
-      "A&#039;B + B&#039;A",
-      "A&#039;B&#039;",
-      "AB&#039; + AB",
-    ],
+      "According to DeMorgan&#039;s Theorem, the Boolean expression (AB) is equivalent to:",
+    correct_answer: "A + B;",
+    incorrect_answers: ["AB + BA", "A;B", "AB + AB"],
   },
   {
     type: "multiple",
@@ -331,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function startQuiz(questions) {
     const startCountdown = () => {
-      countdown = 61; // Imposta il countdown a 60 secondi
+      countdown = 61;
       interval = setInterval(() => {
         countdown--;
         updateDisplay(countdown); // Aggiorna il display del timer
@@ -376,6 +371,12 @@ document.addEventListener("DOMContentLoaded", function () {
         currentQuestionIndex + 1
       }  /  ${questions.length}`;
 
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
       const answers = [question.correct_answer, ...question.incorrect_answers];
       shuffleArray(answers); // Mescola l'array delle risposte
 
@@ -392,13 +393,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       clearInterval(interval);
       startCountdown(); // Avvia il timer per la nuova domanda
-    }
-
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
     }
 
     function selectAnswer(selectedAnswer) {
