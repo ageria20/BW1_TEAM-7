@@ -298,13 +298,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const timer = document.getElementById("timer");
   timer.style.display = "none";
 
-  let countdown = 60; // Imposta il timer a 60 secondi
-  let interval; // Variabile per il timer
-  let currentQuestionIndex = 0; // Indice della domanda corrente
-  let score = 0; // Punteggio del giocatore
-  let userAnswers = []; // Storico delle risposte dell'utente
-  let selectedQuestions = []; // Domande selezionate per il quiz
-
   startQuizButton.addEventListener("click", function () {
     const difficultySelect = document.getElementById("difficultySelect");
     const selectedDifficulty = difficultySelect.value;
@@ -325,15 +318,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function startQuiz(questions) {
+    let countdown; // Imposta il timer a 60 secondi
+    let interval; // Variabile per il timer
+    let currentQuestionIndex = 0; // Indice della domanda corrente
+    let score = 0; // Punteggio del giocatore
+    let userAnswers = []; // Storico delle risposte dell'utente
+    let selectedQuestions = []; // Domande selezionate per il quiz
+
     const startCountdown = () => {
-      countdown = 61;
+      countdown = 60;
+      updateDisplay(countdown); // Aggiorna subito il display del timer
+      updateCircleProgress(); // Aggiorna subito il cerchio di progresso
+
       interval = setInterval(() => {
         countdown--;
         updateDisplay(countdown); // Aggiorna il display del timer
         updateCircleProgress(); // Aggiorna il cerchio di progresso
         if (countdown <= 0) {
           clearInterval(interval); // Ferma il timer quando il countdown arriva a 0
-          timerFinished(); // Chiama la funzione quando il timer finisce
+          loadNextQuestion(); // Carica la prossima domanda
         }
       }, 1000);
     };
@@ -345,14 +348,10 @@ document.addEventListener("DOMContentLoaded", function () {
       timer.style.color = "white";
     };
 
-    const timerFinished = () => {
-      loadNextQuestion(); // Carica la prossima domanda
-    };
-
     function updateCircleProgress() {
-      const progress = (countdown / 61) * 346;
+      const progress = (countdown / 61) * 351;
       const circleProgress = document.querySelector("#circle-progress");
-      circleProgress.style.strokeDashoffset = 346 - progress;
+      circleProgress.style.strokeDashoffset = 351 - progress;
     }
 
     function loadNextQuestion() {
@@ -391,7 +390,6 @@ document.addEventListener("DOMContentLoaded", function () {
         answerList.appendChild(li);
       });
 
-      clearInterval(interval);
       startCountdown(); // Avvia il timer per la nuova domanda
     }
 
@@ -433,7 +431,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       setTimeout(() => {
         loadNextQuestion(); // Carica la prossima domanda
-      }, 300);
+      }, 400);
     }
 
     function endTest() {
